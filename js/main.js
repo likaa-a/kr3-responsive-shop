@@ -146,28 +146,106 @@ const strapVariants = {
 
 if (strapImage && strapOptions.length > 0) {
   let strapRequest = 0;
+  let strapAnimation = null;
+  let activeIndex = Array.from(strapOptions).findIndex((option) => option.checked);
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const strapMedia = strapImage.closest('.product-detail__media');
 
-  strapOptions.forEach((option) => {
+  const applyStrapVariant = (variant) => {
+    strapImage.removeAttribute('srcset');
+    strapImage.src = variant.src;
+    if (variant.srcset) strapImage.srcset = variant.srcset;
+    strapImage.alt = variant.alt;
+    if (strapStatus) strapStatus.textContent = `Выбран вариант: ${variant.label}`;
+  };
+
+  const animateStrapChange = async (variant, direction, request, nextIndex) => {
+    strapAnimation?.cancel();
+    strapImage.classList.add('is-flipping');
+
+    if (typeof strapImage.animate !== 'function') {
+      applyStrapVariant(variant);
+      activeIndex = nextIndex;
+      strapImage.classList.remove('is-flipping');
+      strapMedia?.removeAttribute('aria-busy');
+      return;
+    }
+
+    const isReduced = reducedMotion.matches;
+    const outgoingFrames = isReduced
+      ? [{ opacity: 1 }, { opacity: 0.35 }]
+      : [
+          { transform: 'perspective(1200px) rotateY(0deg) scale(1)', opacity: 1 },
+          { transform: `perspective(1200px) rotateY(${direction * -82}deg) scale(0.975)`, opacity: 0.35 }
+        ];
+
+    strapImage.style.transformOrigin = direction > 0 ? 'left center' : 'right center';
+    strapAnimation = strapImage.animate(outgoingFrames, {
+      duration: isReduced ? 90 : 130,
+      easing: 'cubic-bezier(0.77, 0, 0.175, 1)',
+      fill: 'forwards'
+    });
+
+    try {
+      await strapAnimation.finished;
+    } catch {
+      return;
+    }
+    if (request !== strapRequest) return;
+
+    strapAnimation.cancel();
+    applyStrapVariant(variant);
+    activeIndex = nextIndex;
+
+    const incomingFrames = isReduced
+      ? [{ opacity: 0.35 }, { opacity: 1 }]
+      : [
+          { transform: `perspective(1200px) rotateY(${direction * 82}deg) scale(0.975)`, opacity: 0.35 },
+          { transform: 'perspective(1200px) rotateY(0deg) scale(1)', opacity: 1 }
+        ];
+
+    strapImage.style.transformOrigin = direction > 0 ? 'right center' : 'left center';
+    strapAnimation = strapImage.animate(incomingFrames, {
+      duration: isReduced ? 120 : 170,
+      easing: 'cubic-bezier(0.23, 1, 0.32, 1)',
+      fill: 'forwards'
+    });
+
+    try {
+      await strapAnimation.finished;
+    } catch {
+      return;
+    }
+    if (request !== strapRequest) return;
+
+    strapAnimation.cancel();
+    strapAnimation = null;
+    strapImage.style.removeProperty('transform-origin');
+    strapImage.classList.remove('is-flipping');
+    strapMedia?.removeAttribute('aria-busy');
+  };
+
+  strapOptions.forEach((option, nextIndex) => {
     option.addEventListener('change', () => {
       if (!option.checked) return;
       const variant = strapVariants[option.value];
       if (!variant) return;
 
       const request = ++strapRequest;
+      const direction = nextIndex >= activeIndex ? 1 : -1;
+      strapAnimation?.cancel();
+      strapAnimation = null;
+      strapImage.style.removeProperty('transform-origin');
+      strapImage.classList.remove('is-flipping');
+      strapMedia?.setAttribute('aria-busy', 'true');
       const preload = new Image();
       preload.addEventListener('load', () => {
         if (request !== strapRequest) return;
-        strapImage.classList.add('is-changing');
-        window.setTimeout(() => {
-          if (request !== strapRequest) return;
-          strapImage.removeAttribute('srcset');
-          strapImage.src = variant.src;
-          if (variant.srcset) strapImage.srcset = variant.srcset;
-          strapImage.alt = variant.alt;
-          if (strapStatus) strapStatus.textContent = `Выбран вариант: ${variant.label}`;
-          window.requestAnimationFrame(() => strapImage.classList.remove('is-changing'));
-        }, reducedMotion.matches ? 0 : 140);
+        animateStrapChange(variant, direction, request, nextIndex);
+      }, { once: true });
+      preload.addEventListener('error', () => {
+        if (request !== strapRequest) return;
+        strapMedia?.removeAttribute('aria-busy');
       }, { once: true });
       preload.src = variant.src;
     });
