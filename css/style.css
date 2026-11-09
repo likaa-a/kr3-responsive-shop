@@ -25,3 +25,7 @@
 .site-nav__link,.header-contact,.breadcrumbs,.catalog-results,.filters-form legend,.order-form__label,.form-hint,.form-error{font-size:13px}
 .site-footer{width:100%;margin:clamp(48px,6vw,88px) 0 0;padding-block:56px 32px}
 .site-footer__inner{width:var(--page)}
+.back-to-top{width:52px;min-width:52px;height:52px;padding:0;font-size:0}
+.back-to-top::before,.back-to-top::after{position:absolute;left:50%;width:11px;height:11px;border-top:2px solid #fff;border-left:2px solid #fff;content:"";transform:translate(-50%,-50%) rotate(45deg)}
+.back-to-top::before{top:19px}
+.back-to-top::after{top:30px}
