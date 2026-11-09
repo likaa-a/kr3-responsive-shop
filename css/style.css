@@ -63,3 +63,12 @@
 .testimonial-card footer p{margin:0;color:#626262;font-size:13px}
 .review-status{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;white-space:nowrap;clip-path:inset(50%);border:0}
 .page-intro--catalog h1{max-width:none;white-space:nowrap}
+.product-detail__media{overflow:hidden;background:var(--soft)}
+.product-detail__image{aspect-ratio:1;object-fit:cover;transition:opacity 180ms ease,transform 300ms var(--ease)}
+.product-detail__image.is-changing{opacity:0;transform:scale(.985)}
+.material-picker__options label{border:1px solid transparent;transition:color 160ms ease,background-color 160ms ease,border-color 160ms ease}
+.material-picker__options input{accent-color:#0a0a0a}
+.material-picker__options label:has(input:checked){background:#e4e1dc;border-color:#0a0a0a}
+.material-picker__options label:has(input:focus-visible){outline:3px solid #0a0a0a;outline-offset:3px}
+.material-picker__options input:focus-visible{outline:0}
+.strap-status{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;white-space:nowrap;clip-path:inset(50%);border:0}

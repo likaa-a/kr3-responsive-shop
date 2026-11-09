@@ -120,6 +120,60 @@ newsletterForm?.addEventListener('submit', (event) => {
   newsletterForm.reset();
 });
 
+const strapImage = document.querySelector('[data-strap-image]');
+const strapStatus = document.querySelector('[data-strap-status]');
+const strapOptions = document.querySelectorAll('input[name="strap"]');
+const strapVariants = {
+  green: {
+    src: 'images/heritage-noir-720.jpg',
+    srcset: 'images/heritage-noir-360.jpg 360w, images/heritage-noir-720.jpg 720w',
+    alt: 'Механические часы Heritage Noir с чёрным циферблатом, открытым балансом и зелёным кожаным ремешком',
+    label: 'зелёная кожа'
+  },
+  black: {
+    src: 'images/heritage-noir-black-leather.png',
+    srcset: '',
+    alt: 'Механические часы Heritage Noir с чёрным циферблатом, открытым балансом и чёрным кожаным ремешком',
+    label: 'чёрная кожа'
+  },
+  steel: {
+    src: 'images/heritage-noir-steel.png',
+    srcset: '',
+    alt: 'Механические часы Heritage Noir с чёрным циферблатом, открытым балансом и стальным браслетом',
+    label: 'стальной браслет'
+  }
+};
+
+if (strapImage && strapOptions.length > 0) {
+  let strapRequest = 0;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  strapOptions.forEach((option) => {
+    option.addEventListener('change', () => {
+      if (!option.checked) return;
+      const variant = strapVariants[option.value];
+      if (!variant) return;
+
+      const request = ++strapRequest;
+      const preload = new Image();
+      preload.addEventListener('load', () => {
+        if (request !== strapRequest) return;
+        strapImage.classList.add('is-changing');
+        window.setTimeout(() => {
+          if (request !== strapRequest) return;
+          strapImage.removeAttribute('srcset');
+          strapImage.src = variant.src;
+          if (variant.srcset) strapImage.srcset = variant.srcset;
+          strapImage.alt = variant.alt;
+          if (strapStatus) strapStatus.textContent = `Выбран вариант: ${variant.label}`;
+          window.requestAnimationFrame(() => strapImage.classList.remove('is-changing'));
+        }, reducedMotion.matches ? 0 : 140);
+      }, { once: true });
+      preload.src = variant.src;
+    });
+  });
+}
+
 const reviewTrack = document.querySelector('[data-review-track]');
 const reviewPrev = document.querySelector('[data-review-prev]');
 const reviewNext = document.querySelector('[data-review-next]');
