@@ -62,3 +62,4 @@
 .testimonial-card h3{margin:0 0 3px;font-size:16px}
 .testimonial-card footer p{margin:0;color:#626262;font-size:13px}
 .review-status{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;white-space:nowrap;clip-path:inset(50%);border:0}
+.page-intro--catalog h1{max-width:none;white-space:nowrap}
