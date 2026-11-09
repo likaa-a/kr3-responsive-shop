@@ -1,40 +1,45 @@
-# Design QA — Footer
+# Design QA — Hero background
 
-- Source visual truth: user-provided footer reference image in the conversation (approximately 1522 × 378 px).
-- Implementation screenshots: `.taste-skill/footer-desktop.jpg` and `.taste-skill/footer-mobile.jpg`.
-- Desktop capture: 1440 × 900 CSS px, device scale factor 1.
+- Source visual truth: user-provided watch hero screenshots in the conversation; primary desktop reference approximately 1536 × 787 px.
+- Implementation screenshots: `.taste-skill/hero-background-desktop.jpg`, `.taste-skill/hero-background-tablet.jpg`, and `.taste-skill/hero-background-mobile.jpg`.
+- Desktop capture: 1536 × 900 CSS px, device scale factor 1.
+- Tablet capture: 900 × 900 CSS px, device scale factor 1.
 - Mobile capture: 390 × 844 CSS px, device scale factor 1.
-- State: bottom of the home page with the footer fully visible.
-- Density normalization: compared as responsive layouts rather than pixel-identical crops because the reference and implementation use different viewport widths.
+- State: home page at the top, hero fully visible on desktop and tablet; mobile viewport captures the top of the taller responsive hero.
+- Density normalization: source and desktop implementation were compared at the same 1536 px viewport width. The implementation includes the existing site header and benefit strip outside the reference crop.
 
-## Full-view comparison
+## Full-view comparison evidence
 
-The implementation preserves the reference structure: a full-width dark footer, four desktop columns, brand description, navigation, contact information, showroom details, a primary CTA, and a legal line below. The blue/yellow palette from the unrelated AquaWave Park reference was intentionally mapped to the existing ATELIER 12 black/white design system.
+The desktop implementation now follows the source composition: an organic black field carries the copy on the left, a second black field enters from the right, and a white concave channel frames the product watch between them. The watch remains above the background and the lower black benefit strip reads as a continuous base.
 
-Focused region comparison was not required because the source image itself is a footer-only crop and all implementation footer text is readable in the desktop capture.
+The tablet capture preserves the same composition without crowding the copy. The mobile layout intentionally retains its earlier single-black-field treatment because compressing both background lobes into 390 px would place the white channel beneath the text and reduce contrast.
+
+Focused region comparison was not required: the requested change is a single large background silhouette, clearly readable in the full hero capture; the existing product cutout, text, button, and benefit strip were not changed.
 
 ## Required fidelity surfaces
 
-- Fonts and typography: existing ATELIER 12 display serif is retained for the wordmark; compact sans-serif text and hierarchy match the density of the reference.
-- Spacing and layout rhythm: four balanced columns on desktop, two on tablet, one on mobile; footer spans the full viewport and retains a clear gap from the preceding section.
-- Colors and visual tokens: structure matches the reference while colors intentionally use the established black, white, and muted-gray brand palette.
-- Image quality and asset fidelity: the source footer contains no image assets or icons, so no assets were substituted or approximated.
-- Copy and content: all reference content roles are represented with store-specific navigation, phone, email, schedule, address, visit policy, CTA, and legal copy.
+- Fonts and typography: existing ATELIER 12 serif display and sans-serif support type are unchanged; hierarchy and wrapping remain consistent with the approved site.
+- Spacing and layout rhythm: the white product channel is wide enough for the watch, the right black field begins after the dial, and no responsive viewport has horizontal overflow.
+- Colors and visual tokens: the generated background uses the established black-and-white palette; no new accent colors were introduced.
+- Image quality and asset fidelity: a dedicated 1832 × 858 px raster background is used instead of a CSS approximation. The existing transparent watch cutout remains sharp and visually separated from the background.
+- Copy and content: all existing hero copy, navigation, CTA, and benefit text are unchanged.
 
 ## Interaction and responsive checks
 
-- Five navigation links, telephone, email, and visit CTA are present and use real destinations.
-- Desktop footer width: 1440 px at a 1440 px viewport.
-- Mobile footer width: 390 px at a 390 px viewport with no horizontal overflow.
-- Browser console errors: none on desktop or mobile.
+- Desktop, tablet, and mobile routes load successfully.
+- The hero CTA and existing navigation remain unchanged.
+- Horizontal overflow: none at 1536 px, 900 px, or 390 px.
+- Browser console errors: none across all three captures.
 
 ## Findings
 
-No actionable P0, P1, or P2 mismatches remain. The visual differences are intentional adaptations to the established ATELIER 12 identity.
+No actionable P0, P1, or P2 mismatch remains for the requested background change.
 
 ## Comparison history
 
-- Initial implementation: passed; no P0/P1/P2 fixes were required after the first rendered comparison.
+- Initial generated asset: white center channel was too narrow and would have placed the watch over both black fields.
+- Fix: widened the channel to roughly one fifth of the hero and moved the right black field farther right.
+- Post-fix evidence: desktop and tablet captures show the complete watch framed by white space with black fields visible on both sides.
 
 ## Follow-up polish
 
