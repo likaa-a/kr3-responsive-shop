@@ -40,3 +40,25 @@
 .hero__lead{max-width:35ch;margin-block:20px 30px;color:rgba(255,255,255,.76)}
 .hero-benefits{min-height:100px;border-radius:0 0 30px 30px}
 @media(prefers-reduced-motion:no-preference){.hero__media img{animation:hero-product-float 7s cubic-bezier(.37,0,.63,1) infinite alternate}@keyframes hero-product-float{from{transform:translateY(-5px) rotate(-1deg)}to{transform:translateY(9px) rotate(1deg)}}}
+.testimonials{width:var(--page);padding-block:88px 112px}
+.testimonials__header{display:flex;align-items:end;justify-content:space-between;gap:32px}
+.testimonials h2{text-align:left;font-size:clamp(38px,4vw,58px);line-height:1}
+.testimonials__intro{max-width:42ch;margin:14px 0 0;color:var(--muted);font-size:16px}
+.testimonials__controls{display:flex;gap:8px;flex:none}
+.testimonials__controls button{min-width:88px;min-height:44px;padding:8px 14px;color:#fff;background:#0a0a0a;border:1px solid #0a0a0a;cursor:pointer}
+.testimonials__controls button:disabled{color:#777;background:#fff;border-color:#c9c9c6;cursor:not-allowed}
+.testimonial-grid{display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:calc((100% - 24px)/2);gap:24px;margin-top:42px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-behavior:smooth;scroll-padding-inline:1px;scroll-snap-type:inline mandatory;scrollbar-width:none}
+.testimonial-grid::-webkit-scrollbar{display:none}
+.testimonial-card{display:grid;grid-template-rows:auto 1fr;min-width:0;overflow:hidden;background:#f4f3f0;scroll-snap-align:start;scroll-snap-stop:always}
+.testimonial-card img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.testimonial-card__body{display:grid;grid-template-rows:auto 1fr auto;gap:24px;padding:26px 28px 28px}
+.testimonial-card__model{margin:0;color:#555;font-size:13px;text-transform:uppercase;letter-spacing:.04em}
+.review-rating{display:flex;align-items:baseline;gap:7px;margin:0;color:#0a0a0a;text-transform:none;letter-spacing:0}
+.review-rating strong{font-family:var(--font-display);font-size:36px;font-weight:500;line-height:1}
+.review-rating span{font-size:13px}
+.testimonial-card blockquote{margin:0}
+.testimonial-card blockquote p{margin:0;color:#1a1a1a;font-family:var(--font-display);font-size:clamp(20px,1.7vw,25px);line-height:1.35}
+.testimonial-card footer{display:flex;align-items:end;justify-content:space-between;gap:20px;align-self:end}
+.testimonial-card h3{margin:0 0 3px;font-size:16px}
+.testimonial-card footer p{margin:0;color:#626262;font-size:13px}
+.review-status{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;white-space:nowrap;clip-path:inset(50%);border:0}

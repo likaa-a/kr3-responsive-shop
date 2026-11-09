@@ -87,12 +87,28 @@
     </section>
 
     <section class="testimonials" id="stories" aria-labelledby="stories-title">
-      <h2 id="stories-title">Истории владельцев</h2>
-      <div class="testimonial-grid">
-        <article class="testimonial-card" data-reveal><img src="images/testimonial-suit.png" alt="Стальные часы на запястье с тёмным деловым костюмом" width="1536" height="1024" loading="lazy"><h3>Марк</h3><p>Heritage Noir легко вошли в деловой гардероб: строгие, читаемые и без показной декоративности.</p></article>
-        <article class="testimonial-card" data-reveal><img src="images/testimonial-knit.png" alt="Минималистичные серебряные часы на запястье в светлом трикотаже" width="1536" height="1024" loading="lazy"><h3>Милана</h3><p>Réserve Ivoire выглядят мягко, но собранно. Именно такого спокойного акцента мне не хватало.</p></article>
-        <article class="testimonial-card" data-reveal><img src="images/testimonial-rose.png" alt="Часы цвета розового золота на запястье на фоне тёмной ткани" width="1536" height="1024" loading="lazy"><h3>Николай</h3><p>Monarch Rose заметны только вблизи — редкое сочетание выразительного материала и сдержанной формы.</p></article>
+      <div class="testimonials__header">
+        <div><h2 id="stories-title">Отзывы владельцев</h2><p class="testimonials__intro">Личный опыт тех, кто носит ATELIER 12 каждый день.</p></div>
+        <div class="testimonials__controls" aria-label="Управление отзывами">
+          <button type="button" data-review-prev disabled>Назад</button>
+          <button type="button" data-review-next>Далее</button>
+        </div>
       </div>
+      <div class="testimonial-grid" data-review-track tabindex="0" aria-label="Отзывы покупателей">
+        <article class="testimonial-card" data-reveal>
+          <img src="images/testimonial-suit.png" alt="Стальные часы на запястье с тёмным деловым костюмом" width="1536" height="1024" loading="lazy">
+          <div class="testimonial-card__body"><p class="testimonial-card__model">Heritage Noir</p><blockquote><p>«Строгие, читаемые и без показной декоративности. Легко вошли в деловой гардероб; особенно ценю точность хода».</p></blockquote><footer><div><h3>Марк</h3><p>Москва · владелец 8 месяцев</p></div><p class="review-rating" aria-label="Оценка 5 из 5"><strong>5,0</strong><span>/ 5</span></p></footer></div>
+        </article>
+        <article class="testimonial-card" data-reveal>
+          <img src="images/testimonial-knit.png" alt="Минималистичные серебряные часы на запястье в светлом трикотаже" width="1536" height="1024" loading="lazy">
+          <div class="testimonial-card__body"><p class="testimonial-card__model">Réserve Ivoire</p><blockquote><p>«Спокойный акцент, которого мне не хватало. Часы одинаково уверенно дополняют офисные комплекты и повседневные образы».</p></blockquote><footer><div><h3>Милана</h3><p>Санкт-Петербург · владелец 5 месяцев</p></div><p class="review-rating" aria-label="Оценка 4,9 из 5"><strong>4,9</strong><span>/ 5</span></p></footer></div>
+        </article>
+        <article class="testimonial-card" data-reveal>
+          <img src="images/testimonial-rose.png" alt="Часы цвета розового золота на запястье на фоне тёмной ткани" width="1536" height="1024" loading="lazy">
+          <div class="testimonial-card__body"><p class="testimonial-card__model">Monarch Rose</p><blockquote><p>«Выразительный материал без избыточности. При вечернем освещении часы раскрываются особенно красиво, сохраняя сдержанный характер».</p></blockquote><footer><div><h3>Николай</h3><p>Казань · владелец 11 месяцев</p></div><p class="review-rating" aria-label="Оценка 4,8 из 5"><strong>4,8</strong><span>/ 5</span></p></footer></div>
+        </article>
+      </div>
+      <p class="review-status" data-review-status aria-live="polite">Показаны отзывы 1–2 из 3</p>
     </section>
 
     <section class="newsletter" aria-labelledby="newsletter-title">

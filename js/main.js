@@ -120,6 +120,61 @@ newsletterForm?.addEventListener('submit', (event) => {
   newsletterForm.reset();
 });
 
+const reviewTrack = document.querySelector('[data-review-track]');
+const reviewPrev = document.querySelector('[data-review-prev]');
+const reviewNext = document.querySelector('[data-review-next]');
+const reviewStatus = document.querySelector('[data-review-status]');
+
+if (reviewTrack && reviewPrev && reviewNext) {
+  const reviewCards = Array.from(reviewTrack.querySelectorAll('.testimonial-card'));
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let scrollFrame = 0;
+
+  const getReviewMetrics = () => {
+    const firstCard = reviewCards[0];
+    const gap = Number.parseFloat(getComputedStyle(reviewTrack).columnGap) || 0;
+    const step = firstCard ? firstCard.getBoundingClientRect().width + gap : reviewTrack.clientWidth;
+    const visible = Math.max(1, Math.round((reviewTrack.clientWidth + gap) / step));
+    const start = Math.min(reviewCards.length - 1, Math.max(0, Math.round(reviewTrack.scrollLeft / step)));
+    return { step, visible, start };
+  };
+
+  const updateReviewControls = () => {
+    const { visible, start } = getReviewMetrics();
+    const atStart = reviewTrack.scrollLeft <= 2;
+    const atEnd = reviewTrack.scrollLeft >= reviewTrack.scrollWidth - reviewTrack.clientWidth - 2;
+    reviewPrev.disabled = atStart;
+    reviewNext.disabled = atEnd;
+    if (reviewStatus) {
+      const end = Math.min(reviewCards.length, start + visible);
+      reviewStatus.textContent = `Показаны отзывы ${start + 1}–${end} из ${reviewCards.length}`;
+    }
+  };
+
+  const moveReviews = (direction) => {
+    const { step } = getReviewMetrics();
+    reviewTrack.scrollBy({
+      left: direction * step,
+      behavior: reducedMotion.matches ? 'auto' : 'smooth'
+    });
+  };
+
+  reviewPrev.addEventListener('click', () => moveReviews(-1));
+  reviewNext.addEventListener('click', () => moveReviews(1));
+  reviewTrack.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      moveReviews(event.key === 'ArrowLeft' ? -1 : 1);
+    }
+  });
+  reviewTrack.addEventListener('scroll', () => {
+    window.cancelAnimationFrame(scrollFrame);
+    scrollFrame = window.requestAnimationFrame(updateReviewControls);
+  }, { passive: true });
+  window.addEventListener('resize', updateReviewControls);
+  updateReviewControls();
+}
+
 const filtersForm = document.querySelector('[data-filters-form]');
 const catalogCards = Array.from(document.querySelectorAll('[data-product-card]'));
 const resultsStatus = document.getElementById('catalog-results');
