@@ -181,7 +181,7 @@ if (strapImage && strapOptions.length > 0) {
 
     strapImage.style.transformOrigin = direction > 0 ? 'left center' : 'right center';
     strapAnimation = strapImage.animate(outgoingFrames, {
-      duration: isReduced ? 90 : 130,
+      duration: isReduced ? 450 : 650,
       easing: 'cubic-bezier(0.77, 0, 0.175, 1)',
       fill: 'forwards'
     });
@@ -206,7 +206,7 @@ if (strapImage && strapOptions.length > 0) {
 
     strapImage.style.transformOrigin = direction > 0 ? 'right center' : 'left center';
     strapAnimation = strapImage.animate(incomingFrames, {
-      duration: isReduced ? 120 : 170,
+      duration: isReduced ? 600 : 850,
       easing: 'cubic-bezier(0.23, 1, 0.32, 1)',
       fill: 'forwards'
     });
