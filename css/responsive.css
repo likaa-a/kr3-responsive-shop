@@ -20,5 +20,5 @@
 }
 @media(max-width:1023px){.testimonial-grid{grid-auto-columns:72%}}
 @media(max-width:1023px){.site-footer__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:48px}}
-@media(max-width:767px){.testimonials{padding-block:72px 86px}.testimonials__header{align-items:start}.testimonials__intro{max-width:28ch}.testimonials__controls{display:grid}.testimonials__controls button{min-width:78px}.testimonial-grid{grid-auto-columns:88%;gap:14px;margin-top:30px}.testimonial-card__body{padding:22px}.testimonial-card blockquote p{font-size:20px}}
+@media(max-width:767px){.testimonials{padding-block:72px 86px}.testimonials__header{align-items:start}.testimonials__intro{max-width:28ch}.testimonials__controls{display:grid}.testimonials__controls button{min-width:78px}.testimonial-grid{grid-template-columns:none;grid-auto-columns:88%;gap:14px;margin-top:30px}.testimonial-card__body{padding:22px}.testimonial-card blockquote p{font-size:20px}}
 @media(max-width:767px){.site-footer{margin-top:64px;padding-top:48px}.site-footer__grid{grid-template-columns:1fr;gap:36px}.site-footer__legal{margin-top:44px}}
