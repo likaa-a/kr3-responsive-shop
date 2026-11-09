@@ -52,11 +52,19 @@
       <form class="order-form" data-order-form novalidate>
         <input type="hidden" name="product" value="Heritage Noir">
         <div class="order-form__group order-form__group--wide"><label class="order-form__label" for="quick-name">Имя *</label><input class="order-form__input" id="quick-name" name="name" type="text" minlength="2" autocomplete="name" required aria-describedby="quick-name-error"><p class="form-error" id="quick-name-error" role="alert" hidden></p></div>
+        <div class="order-form__group order-form__group--wide"><label class="order-form__label" for="quick-email">Электронная почта *</label><input class="order-form__input" id="quick-email" name="email" type="email" autocomplete="email" placeholder="name@example.com" required aria-describedby="quick-email-error"><p class="form-error" id="quick-email-error" role="alert" hidden></p></div>
         <div class="order-form__group order-form__group--wide"><label class="order-form__label" for="quick-phone">Телефон *</label><input class="order-form__input" id="quick-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="^\+?[0-9 ()-]{10,20}$" required aria-describedby="quick-phone-error"><p class="form-error" id="quick-phone-error" role="alert" hidden></p></div>
         <div class="order-form__group order-form__group--wide order-form__checkbox"><input id="quick-agreement" name="agreement" type="checkbox" required aria-describedby="quick-agreement-error"><label for="quick-agreement">Согласен на обработку данных *</label><p class="form-error" id="quick-agreement-error" role="alert" hidden></p></div>
         <div class="order-form__actions"><button class="button" type="submit" disabled>Отправить запрос</button></div>
-        <p class="form-status" data-form-status role="status" tabindex="-1" hidden></p>
       </form>
+    </div>
+  </dialog>
+
+  <dialog class="success-dialog" id="success-dialog" aria-labelledby="success-dialog-title" aria-describedby="success-dialog-description">
+    <div class="success-dialog__inner">
+      <h2 class="success-dialog__title" id="success-dialog-title">Заявка успешно отправлена</h2>
+      <p class="success-dialog__text" id="success-dialog-description">Спасибо за обращение. Персональный менеджер свяжется с вами в течение двух дней.</p>
+      <div class="success-dialog__actions"><button class="button" type="button" data-success-close autofocus>Понятно</button></div>
     </div>
   </dialog>
 

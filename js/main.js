@@ -266,7 +266,10 @@ if (filtersForm) {
 
 const orderDialog = document.getElementById('order-dialog');
 const dialogClose = document.querySelector('[data-dialog-close]');
+const successDialog = document.getElementById('success-dialog');
+const successDialogClose = document.querySelector('[data-success-close]');
 let dialogTrigger = null;
+let successReturnFocus = null;
 
 document.querySelectorAll('[data-open-dialog]').forEach((button) => {
   button.addEventListener('click', () => {
@@ -295,6 +298,30 @@ orderDialog?.addEventListener('click', (event) => {
   if (event.target === orderDialog) closeDialog();
 });
 
+function closeSuccessDialog() {
+  if (!successDialog) return;
+  successDialog.close();
+  document.body.classList.remove('dialog-open');
+  successReturnFocus?.focus();
+}
+
+function openSuccessDialog(form) {
+  if (!successDialog) return;
+  successReturnFocus = dialogTrigger || form.querySelector('input, select, textarea');
+  if (orderDialog?.open) orderDialog.close();
+  successDialog.showModal();
+  document.body.classList.add('dialog-open');
+}
+
+successDialogClose?.addEventListener('click', closeSuccessDialog);
+successDialog?.addEventListener('cancel', (event) => {
+  event.preventDefault();
+  closeSuccessDialog();
+});
+successDialog?.addEventListener('click', (event) => {
+  if (event.target === successDialog) closeSuccessDialog();
+});
+
 function validateField(field) {
   const error = document.getElementById(`${field.id}-error`);
   const isValid = field.checkValidity();
@@ -314,7 +341,6 @@ function validateField(field) {
 document.querySelectorAll('form[data-order-form]').forEach((form) => {
   const requiredFields = Array.from(form.querySelectorAll('[required]'));
   const submitButton = form.querySelector('button[type="submit"]');
-  const status = form.querySelector('[data-form-status]');
 
   const syncSubmit = () => {
     if (submitButton) submitButton.disabled = !form.checkValidity();
@@ -336,20 +362,15 @@ document.querySelectorAll('form[data-order-form]').forEach((form) => {
       firstInvalid.focus();
       return;
     }
-    if (status) {
-      status.hidden = false;
-      status.textContent = 'Заявка принята. Персональный менеджер свяжется с вами в течение рабочего часа.';
-      status.focus();
-    }
     form.reset();
     requiredFields.forEach((field) => field.removeAttribute('aria-invalid'));
     syncSubmit();
+    openSuccessDialog(form);
   });
 
   form.addEventListener('reset', () => {
     requiredFields.forEach((field) => field.removeAttribute('aria-invalid'));
     form.querySelectorAll('.form-error').forEach((error) => { error.hidden = true; });
-    if (status) status.hidden = true;
     window.setTimeout(syncSubmit, 0);
   });
 
