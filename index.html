@@ -29,27 +29,15 @@
 
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__media" aria-live="polite">
-        <picture>
-          <source data-hero-source media="(min-width:1200px)" srcset="images/hero-desktop.jpg">
-          <source data-hero-source media="(min-width:768px)" srcset="images/hero-tablet.jpg">
-          <img id="hero-product-image" src="images/hero-mobile.jpg" alt="Крупный план механических часов Heritage Noir с чёрным циферблатом" width="800" height="960" fetchpriority="high">
-        </picture>
+      <div class="hero__backdrop" aria-hidden="true"></div>
+      <div class="hero__media">
+        <img id="hero-product-image" src="images/hero-skeleton-cutout.png" alt="Скелетонизированные механические часы в корпусе из розового золота с чёрным ремешком" width="1024" height="1536" fetchpriority="high">
       </div>
       <div class="hero__content">
         <div class="hero__copy" data-reveal>
           <h1 class="hero__title" id="hero-title">Будьте на шаг впереди</h1>
           <p class="hero__lead">Выберите часы, которые выражают характер и сохраняют точность в каждом решении.</p>
           <a class="button button--light" href="catalog.html">Смотреть коллекцию</a>
-        </div>
-        <div class="hero__selection" data-reveal>
-          <div class="model-switcher" aria-label="Выберите модель для просмотра">
-            <button type="button" data-model="heritage" aria-pressed="true" aria-label="Показать Heritage Noir">H</button>
-            <button type="button" data-model="reserve" aria-pressed="false" aria-label="Показать Réserve Ivoire">R</button>
-            <button type="button" data-model="integral" aria-pressed="false" aria-label="Показать Intégral Bleu">I</button>
-          </div>
-          <p class="hero__model-name" id="hero-model-name">Heritage Noir</p>
-          <p class="hero__price" id="hero-model-price">286 000 ₽</p>
         </div>
       </div>
       <div class="hero-benefits" aria-label="Преимущества магазина">
