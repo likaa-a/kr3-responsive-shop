@@ -88,6 +88,38 @@ document.querySelectorAll('[data-model]').forEach((button) => {
   });
 });
 
+const collectionTabs = Array.from(document.querySelectorAll('[data-collection-tab]'));
+const homeProducts = Array.from(document.querySelectorAll('[data-home-product]'));
+
+collectionTabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    const selectedGroup = tab.dataset.collectionTab;
+    collectionTabs.forEach((item) => {
+      item.setAttribute('aria-selected', String(item === tab));
+    });
+    homeProducts.forEach((product) => {
+      const groups = (product.dataset.groups || '').split(' ');
+      product.hidden = !groups.includes(selectedGroup);
+    });
+  });
+});
+
+const newsletterForm = document.querySelector('[data-newsletter-form]');
+const newsletterStatus = document.querySelector('[data-newsletter-status]');
+
+newsletterForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (!newsletterForm.checkValidity()) {
+    newsletterForm.reportValidity();
+    return;
+  }
+  if (newsletterStatus) {
+    newsletterStatus.hidden = false;
+    newsletterStatus.textContent = 'Спасибо. Приглашение в закрытый список отправлено.';
+  }
+  newsletterForm.reset();
+});
+
 const filtersForm = document.querySelector('[data-filters-form]');
 const catalogCards = Array.from(document.querySelectorAll('[data-product-card]'));
 const resultsStatus = document.getElementById('catalog-results');

@@ -5,30 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="ATELIER 12 — учебный интернет-магазин механических часов в официальном деловом стиле.">
   <title>ATELIER 12 — механические часы</title>
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-  <link href="https://api.fontshare.com/v2/css?f[]=panchang@700&f[]=switzer@400,500,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
 </head>
 <body id="page-top">
   <a class="skip-link" href="#main">Перейти к основному содержимому</a>
-  <header class="site-header">
+  <header class="site-header home-header">
     <div class="site-header__inner">
-      <a class="brand" href="index.html" aria-label="ATELIER 12, главная">
-        ATELIER <span class="brand__mark">12</span>
-      </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button>
       <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li><a class="site-nav__link" href="index.html" aria-current="page">Главная</a></li>
           <li><a class="site-nav__link" href="catalog.html">Коллекция</a></li>
-          <li><a class="site-nav__link" href="product.html">Модель</a></li>
-          <li><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li><a class="site-nav__link" href="#stories">Истории</a></li>
           <li><a class="site-nav__link" href="contacts.html">Контакты</a></li>
         </ul>
       </nav>
+      <a class="brand" href="index.html" aria-label="ATELIER 12, главная">ATELIER <span class="brand__mark">12</span></a>
+      <a class="header-contact" href="tel:+74950001212">+7 495 000-12-12</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button>
     </div>
   </header>
 
@@ -36,15 +31,16 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero__media" aria-live="polite">
         <picture>
-          <source data-hero-source media="(min-width: 1200px)" srcset="images/hero-desktop.jpg">
-          <source data-hero-source media="(min-width: 768px)" srcset="images/hero-tablet.jpg">
+          <source data-hero-source media="(min-width:1200px)" srcset="images/hero-desktop.jpg">
+          <source data-hero-source media="(min-width:768px)" srcset="images/hero-tablet.jpg">
           <img id="hero-product-image" src="images/hero-mobile.jpg" alt="Крупный план механических часов Heritage Noir с чёрным циферблатом" width="800" height="960" fetchpriority="high">
         </picture>
       </div>
       <div class="hero__content">
-        <div data-reveal>
-          <h1 class="hero__title" id="hero-title">Часы вне времени</h1>
-          <p class="hero__lead">Шесть механических моделей для делового ритма, частных встреч и решений, рассчитанных на годы.</p>
+        <div class="hero__copy" data-reveal>
+          <h1 class="hero__title" id="hero-title">Будьте на шаг впереди</h1>
+          <p class="hero__lead">Выберите часы, которые выражают характер и сохраняют точность в каждом решении.</p>
+          <a class="button button--light" href="catalog.html">Смотреть коллекцию</a>
         </div>
         <div class="hero__selection" data-reveal>
           <div class="model-switcher" aria-label="Выберите модель для просмотра">
@@ -54,153 +50,70 @@
           </div>
           <p class="hero__model-name" id="hero-model-name">Heritage Noir</p>
           <p class="hero__price" id="hero-model-price">286 000 ₽</p>
-          <a class="button button--light" href="catalog.html">Смотреть коллекцию</a>
         </div>
       </div>
-    </section>
-
-    <section class="statement page-shell" aria-labelledby="statement-title">
-      <h2 class="section-heading" id="statement-title" data-reveal>Точность как позиция</h2>
-      <p class="statement__text" data-reveal>ATELIER 12 соединяет сдержанную геометрию, читаемый циферблат и материалы, которые уместны в кабинете и за его пределами.</p>
-      <div class="statement__facts" aria-label="Ключевые характеристики коллекции">
-        <p data-reveal><strong>6</strong> моделей в текущей коллекции</p>
-        <p data-reveal><strong>40–42 мм</strong> диаметр корпуса</p>
-        <p data-reveal><strong>72 ч</strong> максимальный запас хода</p>
+      <div class="hero-benefits" aria-label="Преимущества магазина">
+        <p class="hero-benefit"><strong>Расширенная гарантия</strong><span>До пяти лет обслуживания</span></p>
+        <p class="hero-benefit"><strong>Бесплатная доставка</strong><span>По Москве в день согласования</span></p>
+        <p class="hero-benefit"><strong>30 дней на возврат</strong><span>Для часов без следов эксплуатации</span></p>
       </div>
     </section>
 
-    <section class="collection" aria-labelledby="collection-title">
+    <section class="collection home-collection" aria-labelledby="collection-title">
       <div class="page-shell">
-        <header class="collection__header">
-          <h2 class="section-heading" id="collection-title" data-reveal>Текущая коллекция</h2>
-          <p data-reveal>Классические, керамические и интегрированные корпуса. Все характеристики и цены приведены для учебной демонстрации магазина.</p>
-        </header>
-        <div class="products-grid">
-          <article class="product-card" data-reveal>
-            <div class="product-card__media">
-              <img class="product-card__image" src="images/heritage-noir-360.jpg" srcset="images/heritage-noir-360.jpg 360w, images/heritage-noir-720.jpg 720w" sizes="(max-width: 639px) calc(100vw - 32px), (max-width: 1023px) 50vw, 33vw" alt="Часы Heritage Noir со стальным корпусом и зелёным ремешком" width="720" height="720">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">Heritage Noir</h3>
-              <p class="product-card__description">Сталь, чёрный циферблат, зелёная кожа.</p>
-              <p class="product-card__price">286 000 ₽</p>
-              <div class="product-card__actions">
-                <a class="button" href="product.html">Подробнее</a>
-                <a class="button button--ghost" href="order.html?product=Heritage%20Noir">Заявка</a>
-              </div>
-            </div>
+        <header class="collection__header"><h2 class="section-heading" id="collection-title">Избранные модели</h2></header>
+        <div class="collection-tabs" role="tablist" aria-label="Подборки часов">
+          <button type="button" role="tab" aria-selected="true" data-collection-tab="best">Бестселлеры</button>
+          <button type="button" role="tab" aria-selected="false" data-collection-tab="new">Новинки</button>
+          <button type="button" role="tab" aria-selected="false" data-collection-tab="sale">Особая цена</button>
+        </div>
+        <div class="products-grid" id="home-products">
+          <article class="product-card" data-home-product data-groups="best new" data-reveal>
+            <a class="product-card__media" href="product.html"><img class="product-card__image" src="images/heritage-noir-360.jpg" srcset="images/heritage-noir-360.jpg 360w, images/heritage-noir-720.jpg 720w" sizes="(max-width:767px) 50vw,25vw" alt="Часы Heritage Noir со стальным корпусом и зелёным ремешком" width="720" height="720"></a>
+            <div class="product-card__body"><h3 class="product-card__title">Heritage Noir</h3><p class="product-card__description">Сталь, чёрный циферблат, зелёная кожа.</p><p class="product-card__price">286 000 ₽</p></div>
           </article>
-          <article class="product-card" data-reveal>
-            <div class="product-card__media">
-              <img class="product-card__image" src="images/reserve-ivoire-360.jpg" srcset="images/reserve-ivoire-360.jpg 360w, images/reserve-ivoire-720.jpg 720w" sizes="(max-width: 639px) calc(100vw - 32px), (max-width: 1023px) 50vw, 33vw" alt="Часы Réserve Ivoire со светлым циферблатом" width="720" height="720" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">Réserve Ivoire</h3>
-              <p class="product-card__description">Полированная сталь, цвет слоновой кости.</p>
-              <p class="product-card__price">312 000 ₽</p>
-              <div class="product-card__actions"><a class="button" href="product.html">Подробнее</a><a class="button button--ghost" href="order.html?product=Réserve%20Ivoire">Заявка</a></div>
-            </div>
+          <article class="product-card" data-home-product data-groups="best sale" data-reveal>
+            <a class="product-card__media" href="product.html"><img class="product-card__image" src="images/integral-bleu-360.jpg" srcset="images/integral-bleu-360.jpg 360w, images/integral-bleu-720.jpg 720w" sizes="(max-width:767px) 50vw,25vw" alt="Часы Intégral Bleu с синим циферблатом и стальным браслетом" width="720" height="720" loading="lazy"></a>
+            <div class="product-card__body"><h3 class="product-card__title">Intégral Bleu</h3><p class="product-card__description">Стальной браслет, глубокий синий циферблат.</p><p class="product-card__price">398 000 ₽</p></div>
           </article>
-          <article class="product-card" data-reveal>
-            <div class="product-card__media">
-              <img class="product-card__image" src="images/monarch-rose-360.jpg" srcset="images/monarch-rose-360.jpg 360w, images/monarch-rose-720.jpg 720w" sizes="(max-width: 639px) calc(100vw - 32px), (max-width: 1023px) 50vw, 33vw" alt="Часы Monarch Rose в корпусе цвета розового золота" width="720" height="720" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">Monarch Rose</h3>
-              <p class="product-card__description">Розовое золото, коричневый циферблат.</p>
-              <p class="product-card__price">468 000 ₽</p>
-              <div class="product-card__actions"><a class="button" href="product.html">Подробнее</a><a class="button button--ghost" href="order.html?product=Monarch%20Rose">Заявка</a></div>
-            </div>
+          <article class="product-card" data-home-product data-groups="best new" data-reveal>
+            <a class="product-card__media" href="product.html"><img class="product-card__image" src="images/ceramic-night-360.jpg" srcset="images/ceramic-night-360.jpg 360w, images/ceramic-night-720.jpg 720w" sizes="(max-width:767px) 50vw,25vw" alt="Чёрные керамические часы Ceramic Night" width="720" height="720" loading="lazy"></a>
+            <div class="product-card__body"><h3 class="product-card__title">Ceramic Night</h3><p class="product-card__description">Чёрная керамика и каучуковый ремешок.</p><p class="product-card__price">354 000 ₽</p></div>
           </article>
-          <article class="product-card" data-reveal>
-            <div class="product-card__media">
-              <img class="product-card__image" src="images/ceramic-night-360.jpg" srcset="images/ceramic-night-360.jpg 360w, images/ceramic-night-720.jpg 720w" sizes="(max-width: 639px) calc(100vw - 32px), (max-width: 1023px) 50vw, 33vw" alt="Чёрные керамические часы Ceramic Night" width="720" height="720" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">Ceramic Night</h3>
-              <p class="product-card__description">Чёрная керамика и каучуковый ремешок.</p>
-              <p class="product-card__price">354 000 ₽</p>
-              <div class="product-card__actions"><a class="button" href="product.html">Подробнее</a><a class="button button--ghost" href="order.html?product=Ceramic%20Night">Заявка</a></div>
-            </div>
-          </article>
-          <article class="product-card" data-reveal>
-            <div class="product-card__media">
-              <img class="product-card__image" src="images/integral-bleu-360.jpg" srcset="images/integral-bleu-360.jpg 360w, images/integral-bleu-720.jpg 720w" sizes="(max-width: 639px) calc(100vw - 32px), (max-width: 1023px) 50vw, 33vw" alt="Часы Intégral Bleu с синим циферблатом и стальным браслетом" width="720" height="720" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">Intégral Bleu</h3>
-              <p class="product-card__description">Стальной браслет, глубокий синий циферблат.</p>
-              <p class="product-card__price">398 000 ₽</p>
-              <div class="product-card__actions"><a class="button" href="product.html">Подробнее</a><a class="button button--ghost" href="order.html?product=Intégral%20Bleu">Заявка</a></div>
-            </div>
-          </article>
-          <article class="product-card" data-reveal>
-            <div class="product-card__media">
-              <img class="product-card__image" src="images/atelier-silver-360.jpg" srcset="images/atelier-silver-360.jpg 360w, images/atelier-silver-720.jpg 720w" sizes="(max-width: 639px) calc(100vw - 32px), (max-width: 1023px) 50vw, 33vw" alt="Часы Atelier Silver с серебристым циферблатом и светло-коричневым ремешком" width="720" height="720" loading="lazy">
-            </div>
-            <div class="product-card__body">
-              <h3 class="product-card__title">Atelier Silver</h3>
-              <p class="product-card__description">Серебристый циферблат, натуральная кожа.</p>
-              <p class="product-card__price">274 000 ₽</p>
-              <div class="product-card__actions"><a class="button" href="product.html">Подробнее</a><a class="button button--ghost" href="order.html?product=Atelier%20Silver">Заявка</a></div>
-            </div>
+          <article class="product-card" data-home-product data-groups="best sale" data-reveal>
+            <a class="product-card__media" href="product.html"><img class="product-card__image" src="images/monarch-rose-360.jpg" srcset="images/monarch-rose-360.jpg 360w, images/monarch-rose-720.jpg 720w" sizes="(max-width:767px) 50vw,25vw" alt="Часы Monarch Rose в корпусе цвета розового золота" width="720" height="720" loading="lazy"></a>
+            <div class="product-card__body"><h3 class="product-card__title">Monarch Rose</h3><p class="product-card__description">Розовое золото и коричневый циферблат.</p><p class="product-card__price">468 000 ₽</p></div>
           </article>
         </div>
       </div>
     </section>
 
     <section class="craft" aria-labelledby="craft-title">
-      <div class="craft__image" data-reveal>
-        <img src="images/hero-desktop.jpg" alt="Макросъёмка корпуса и чёрного циферблата механических часов" width="1536" height="1024" loading="lazy">
-      </div>
-      <div class="craft__content">
-        <h2 class="section-heading" id="craft-title" data-reveal>Механика без шума</h2>
-        <p data-reveal>Дизайн строится вокруг пропорций и тактильных материалов. Никаких лишних усложнений на циферблате — только время и открытый баланс.</p>
-        <ul class="craft__list">
-          <li data-reveal><strong>Корпус</strong>Сталь, керамика или розовое золото.</li>
-          <li data-reveal><strong>Стекло</strong>Сапфировое, с антибликовым покрытием.</li>
-          <li data-reveal><strong>Механизм</strong>Автоматический завод и открытый баланс.</li>
-        </ul>
+      <div class="craft__image" data-reveal><img src="images/hero-desktop.jpg" alt="Макросъёмка корпуса и чёрного циферблата механических часов" width="1536" height="1024" loading="lazy"></div>
+      <div class="craft__content"><h2 class="section-heading" id="craft-title" data-reveal>Часы как часть вашего стиля</h2><p data-reveal>Модель должна быть не только точным инструментом, но и спокойным символом вашей личной позиции.</p></div>
+    </section>
+
+    <section class="brands page-shell" aria-labelledby="brands-title">
+      <h2 id="brands-title">Коллекции ATELIER 12</h2>
+      <ul class="brand-row" aria-label="Линии коллекции"><li>HERITAGE</li><li>Réserve</li><li>MONARCH</li><li>Ceramic</li><li>INTÉGRAL</li><li>Atelier</li></ul>
+    </section>
+
+    <section class="testimonials" id="stories" aria-labelledby="stories-title">
+      <h2 id="stories-title">Истории владельцев</h2>
+      <div class="testimonial-grid">
+        <article class="testimonial-card" data-reveal><img src="images/testimonial-suit.png" alt="Стальные часы на запястье с тёмным деловым костюмом" width="1536" height="1024" loading="lazy"><h3>Марк</h3><p>Heritage Noir легко вошли в деловой гардероб: строгие, читаемые и без показной декоративности.</p></article>
+        <article class="testimonial-card" data-reveal><img src="images/testimonial-knit.png" alt="Минималистичные серебряные часы на запястье в светлом трикотаже" width="1536" height="1024" loading="lazy"><h3>Милана</h3><p>Réserve Ivoire выглядят мягко, но собранно. Именно такого спокойного акцента мне не хватало.</p></article>
+        <article class="testimonial-card" data-reveal><img src="images/testimonial-rose.png" alt="Часы цвета розового золота на запястье на фоне тёмной ткани" width="1536" height="1024" loading="lazy"><h3>Николай</h3><p>Monarch Rose заметны только вблизи — редкое сочетание выразительного материала и сдержанной формы.</p></article>
       </div>
     </section>
 
-    <section class="faq page-shell" aria-labelledby="faq-title">
-      <h2 class="section-heading" id="faq-title" data-reveal>Перед выбором</h2>
-      <div class="faq__list">
-        <details data-reveal><summary>Можно ли примерить часы?</summary><p>Да. Оставьте заявку и выберите удобное время частной консультации в учебном шоуруме.</p></details>
-        <details data-reveal><summary>Какие данные в каталоге являются реальными?</summary><p>Проект учебный: названия, цены и характеристики демонстрационные и используются для проверки вёрстки.</p></details>
-        <details data-reveal><summary>Как выбрать размер корпуса?</summary><p>Для большинства запястий подходит диапазон 40–42 мм. На консультации можно сравнить обе посадки.</p></details>
-        <details data-reveal><summary>Есть ли гарантия?</summary><p>В макете предусмотрен двухлетний гарантийный сценарий; юридические условия должны быть уточнены перед реальным запуском.</p></details>
-        <details data-reveal><summary>Можно заменить ремешок?</summary><p>Да, на странице модели можно выбрать кожу или стальной браслет и передать выбор в заявке.</p></details>
-        <details data-reveal><summary>Как оформить заказ?</summary><p>Выберите модель, заполните форму и дождитесь звонка консьержа. Оплата в учебном проекте не подключена.</p></details>
-      </div>
-    </section>
-
-    <section class="cta" aria-labelledby="cta-title">
-      <div class="cta__media" data-reveal>
-        <img src="images/reserve-ivoire-720.jpg" alt="Часы Réserve Ivoire со светлым циферблатом" width="720" height="720" loading="lazy">
-      </div>
-      <div class="cta__content">
-        <h2 class="cta__title" id="cta-title" data-reveal>Выберите своё время</h2>
-        <p data-reveal>Получите частную консультацию по коллекции и сравните материалы в спокойной обстановке.</p>
-        <a class="button button--light" href="order.html" data-reveal>Назначить консультацию</a>
-      </div>
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <div class="newsletter__content"><h2 id="newsletter-title">Узнавайте первыми</h2><p>Новые модели, частные показы и заметки о механике — в коротком письме раз в месяц.</p><form class="newsletter__form" data-newsletter-form><label class="skip-link" for="newsletter-email">E-mail</label><input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="E-mail" required><button type="submit">Подписаться</button></form><p class="newsletter__status" data-newsletter-status role="status" hidden></p></div>
+      <div class="newsletter__media"><img src="images/hero-desktop.jpg" alt="Макродеталь чёрного циферблата механических часов" width="1536" height="1024" loading="lazy"></div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <p class="site-footer__wordmark">ATELIER 12</p>
-      <div class="site-footer__columns">
-        <p>Учебный интернет-магазин механических часов. Официальный деловой стиль и спокойная консультация.</p>
-        <nav class="site-footer__links" aria-label="Навигация в подвале">
-          <a href="catalog.html">Коллекция</a><a href="product.html">Модель</a><a href="order.html">Заявка</a>
-        </nav>
-        <div class="site-footer__links"><a href="tel:+74950001212">+7 495 000-12-12</a><a href="mailto:concierge@atelier12.example">concierge@atelier12.example</a></div>
-      </div>
-      <p class="site-footer__legal">© 2026 ATELIER 12. Учебный проект, не является публичной офертой.</p>
-    </div>
-  </footer>
-  <a class="back-to-top" href="#page-top" aria-label="Вернуться к началу страницы" hidden>↑</a>
+  <footer class="site-footer"><div class="site-footer__inner"><p class="site-footer__wordmark">ATELIER 12</p><div class="site-footer__columns"><p>Учебный интернет-магазин механических часов. Москва, Пречистенка, 12.</p><nav class="site-footer__links" aria-label="Навигация в подвале"><a href="index.html">Главная</a><a href="catalog.html">Коллекция</a><a href="order.html">Заявка</a></nav><div class="site-footer__links"><a href="tel:+74950001212">+7 495 000-12-12</a><a href="mailto:concierge@atelier12.example">concierge@atelier12.example</a></div></div><p class="site-footer__legal">© 2026 ATELIER 12. Учебный проект, не является публичной офертой.</p></div></footer>
+  <a class="back-to-top" href="#page-top">Вверх</a>
 </body>
 </html>
