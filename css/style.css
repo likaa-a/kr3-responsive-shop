@@ -23,3 +23,5 @@
 .hero__lead,.hero-benefit span,.product-card__title,.product-card__description,.product-card__price,.testimonial-card h3,.testimonial-card p,.newsletter__content p,.newsletter__status,.site-footer__columns p,.site-footer__links,.site-footer__legal{font-size:16px}
 .brand__mark,.button,.model-switcher button,.newsletter__form button{font-size:13px}
 .site-nav__link,.header-contact,.breadcrumbs,.catalog-results,.filters-form legend,.order-form__label,.form-hint,.form-error{font-size:13px}
+.site-footer{width:100%;margin:clamp(48px,6vw,88px) 0 0;padding-block:56px 32px}
+.site-footer__inner{width:var(--page)}
