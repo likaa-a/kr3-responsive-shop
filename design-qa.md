@@ -1,44 +1,43 @@
-# Design QA
+# Design QA — Footer
 
-## Evidence
-
-- Source visual truth path: `conversation://hero-reference-second-screenshot`.
-- Source dimensions: `544 × 317 px` as displayed in the attached reference; source density metadata is unavailable.
-- Desktop implementation screenshot: `.taste-skill/hero-showcase-v2/desktop-fold.jpg`.
-- Mobile implementation screenshot: `.taste-skill/hero-showcase-v2/mobile-fold.jpg`.
-- Desktop viewport and pixels: `1440 × 900 CSS px`, `1440 × 900 px`, device scale factor `1`.
-- Mobile viewport and pixels: `390 × 844 CSS px`, `390 × 844 px`, device scale factor `1`.
-- Density normalization: the reference is a smaller desktop composition, so comparison used normalized section proportions, focal placement, contrast, and crop rather than direct pixel overlay.
-- State: home page on initial load, desktop navigation visible, mobile navigation closed.
+- Source visual truth: user-provided footer reference image in the conversation (approximately 1522 × 378 px).
+- Implementation screenshots: `.taste-skill/footer-desktop.jpg` and `.taste-skill/footer-mobile.jpg`.
+- Desktop capture: 1440 × 900 CSS px, device scale factor 1.
+- Mobile capture: 390 × 844 CSS px, device scale factor 1.
+- State: bottom of the home page with the footer fully visible.
+- Density normalization: compared as responsive layouts rather than pixel-identical crops because the reference and implementation use different viewport widths.
 
 ## Full-view comparison
 
-The implementation follows the selected reference's primary composition: a restrained white page frame, a dominant asymmetric black hero surface, concise left-aligned copy, and an isolated vertical skeleton watch crossing from the black field into white negative space. The existing ATELIER 12 header and three service promises remain intact as required product structure.
+The implementation preserves the reference structure: a full-width dark footer, four desktop columns, brand description, navigation, contact information, showroom details, a primary CTA, and a legal line below. The blue/yellow palette from the unrelated AquaWave Park reference was intentionally mapped to the existing ATELIER 12 black/white design system.
 
-## Focused region comparison
-
-The hero was inspected separately at desktop and mobile sizes. Typography, watch scale, alpha edges, panel curvature, button contrast, and the handoff into the benefit strip are clearly readable in the focused captures. The generated watch uses a clean transparent edge with no logo, text, or placeholder treatment.
+Focused region comparison was not required because the source image itself is a footer-only crop and all implementation footer text is readable in the desktop capture.
 
 ## Required fidelity surfaces
 
-- Fonts and typography: existing Cormorant Garamond and Inter system preserved; headline holds to two lines at both tested widths.
-- Spacing and layout rhythm: wide left text field, strong right-side object focus, and deliberate white release around the watch match the reference direction.
-- Colors and tokens: black, white, rose-gold, and muted gray keep the premium monochrome system while introducing the reference's warmer product focal point.
-- Image quality: `images/hero-skeleton-cutout.png` is a project-local transparent PNG with a full commercial product render and clean alpha.
-- Copy and content: existing Russian headline, supporting text, CTA, navigation, and service promises are preserved.
+- Fonts and typography: existing ATELIER 12 display serif is retained for the wordmark; compact sans-serif text and hierarchy match the density of the reference.
+- Spacing and layout rhythm: four balanced columns on desktop, two on tablet, one on mobile; footer spans the full viewport and retains a clear gap from the preceding section.
+- Colors and visual tokens: structure matches the reference while colors intentionally use the established black, white, and muted-gray brand palette.
+- Image quality and asset fidelity: the source footer contains no image assets or icons, so no assets were substituted or approximated.
+- Copy and content: all reference content roles are represented with store-specific navigation, phone, email, schedule, address, visit policy, CTA, and legal copy.
+
+## Interaction and responsive checks
+
+- Five navigation links, telephone, email, and visit CTA are present and use real destinations.
+- Desktop footer width: 1440 px at a 1440 px viewport.
+- Mobile footer width: 390 px at a 390 px viewport with no horizontal overflow.
+- Browser console errors: none on desktop or mobile.
 
 ## Findings
 
-No actionable P0, P1, or P2 findings remain.
-
-- P3: the source places navigation inside the black hero, while the implementation retains the established white site header to preserve navigation consistency across all pages.
+No actionable P0, P1, or P2 mismatches remain. The visual differences are intentional adaptations to the established ATELIER 12 identity.
 
 ## Comparison history
 
-1. First capture: the headline wrapped to three lines and automated inspection treated the copy as white-on-white because the black shape was a sibling surface. Classified as P2.
-2. Fix: widened and balanced the headline measure, and assigned the same black surface to the copy container without changing the visible composition.
-3. Post-fix evidence: `.taste-skill/hero-showcase-v2/desktop-fold.jpg` and `.taste-skill/hero-showcase-v2/mobile-fold.jpg`; headline holds to two lines, contrast passes, and visual inspection reports zero failures.
+- Initial implementation: passed; no P0/P1/P2 fixes were required after the first rendered comparison.
 
-## Final result
+## Follow-up polish
 
-passed
+No blocking polish items.
+
+final result: passed

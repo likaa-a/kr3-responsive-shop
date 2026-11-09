@@ -7,4 +7,6 @@
 @media(max-width:1023px) and (min-width:768px){.hero__backdrop{width:88%}.hero__content{width:62%;padding-left:44px}.hero__media{right:2%;width:48%}}
 @media(max-width:767px){.hero{min-height:894px;border-radius:0 0 22px 22px}.hero__backdrop{width:100%;height:670px;border-radius:0 0 48% 0/0 0 12% 0}.hero__content{display:flex;width:100%;min-height:670px;padding:72px 22px 330px}.hero__copy{align-self:flex-start;max-width:100%}.hero__title{max-width:11ch;font-size:clamp(50px,14vw,62px)}.hero__lead{max-width:29ch}.hero__media{inset:255px -24px 224px auto;width:78%;height:auto}.hero__media img{object-position:center bottom}.hero-benefits{border-radius:0 0 22px 22px}}
 @media(max-width:1023px){.testimonial-grid{grid-auto-columns:72%}}
+@media(max-width:1023px){.site-footer__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:48px}}
 @media(max-width:767px){.testimonials{padding-block:72px 86px}.testimonials__header{align-items:start}.testimonials__intro{max-width:28ch}.testimonials__controls{display:grid}.testimonials__controls button{min-width:78px}.testimonial-grid{grid-auto-columns:88%;gap:14px;margin-top:30px}.testimonial-card__body{padding:22px}.testimonial-card blockquote p{font-size:20px}}
+@media(max-width:767px){.site-footer{margin-top:64px;padding-top:48px}.site-footer__grid{grid-template-columns:1fr;gap:36px}.site-footer__legal{margin-top:44px}}
