@@ -6,7 +6,18 @@
 @media(max-width:767px){.home-header .brand{order:1}.home-header .header-contact{order:2}.home-header .nav-toggle{order:3}.home-header .site-nav{order:4}.hero-benefit+.hero-benefit{border-top:0}.site-footer__inner{width:min(100% - 44px,1200px)}}
 @media(max-width:1023px) and (min-width:768px){.hero__backdrop{width:88%}.hero__content{width:62%;padding-left:44px}.hero__media{right:2%;width:48%}}
 @media(max-width:767px){.hero{min-height:894px;border-radius:0 0 22px 22px}.hero__backdrop{width:100%;height:670px;border-radius:0 0 48% 0/0 0 12% 0}.hero__content{display:flex;width:100%;min-height:670px;padding:72px 22px 330px}.hero__copy{align-self:flex-start;max-width:100%}.hero__title{max-width:11ch;font-size:clamp(50px,14vw,62px)}.hero__lead{max-width:29ch}.hero__media{inset:255px -24px 224px auto;width:78%;height:auto}.hero__media img{object-position:center bottom}.hero-benefits{border-radius:0 0 22px 22px}}
-@media(min-width:768px){.hero__backdrop{width:100%;height:610px;background:#fff url("../images/hero-curve-background.png") center/100% 100% no-repeat;border-radius:0}}
+@media(min-width:768px){
+  .hero{min-height:0}
+  .hero__backdrop{width:100%;height:540px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 610' preserveAspectRatio='none'%3E%3Cpath fill='%23090909' d='M0 0h650c100 0 168 51 166 107-3 96-19 120-19 198s16 104 19 183c2 56-24 95-81 122H0Z'/%3E%3Cpath fill='%23090909' d='M1200 0H1105c-75 0-206 47-204 108 3 91 18 122 18 197s-15 109-18 182c-2 57 83 98 166 123h133Z'/%3E%3C/svg%3E") center/100% 100% no-repeat;border-radius:0}
+  .hero__content{width:57%;min-height:540px;padding:48px 0 48px 8.5%}
+  .hero__copy{max-width:450px;background:transparent}
+  .hero__title{max-width:13ch;font-size:clamp(42px,4.6vw,66px);line-height:1.02;text-wrap:balance}
+  .hero__lead{max-width:34ch;margin:22px 0 28px;font-size:15px;line-height:1.6}
+  .hero__copy .button{min-height:46px;padding:12px 26px;color:#090909;background:#fff;border-color:#fff;font-size:13px}
+  .hero__copy .button:hover{color:#fff;background:#090909}
+  .hero__media{inset:18px 11.5% auto auto;width:34%;height:504px}
+  .hero__media img{animation:none;filter:none}
+}
 @media(max-width:1023px){.testimonial-grid{grid-auto-columns:72%}}
 @media(max-width:1023px){.site-footer__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:48px}}
 @media(max-width:767px){.testimonials{padding-block:72px 86px}.testimonials__header{align-items:start}.testimonials__intro{max-width:28ch}.testimonials__controls{display:grid}.testimonials__controls button{min-width:78px}.testimonial-grid{grid-auto-columns:88%;gap:14px;margin-top:30px}.testimonial-card__body{padding:22px}.testimonial-card blockquote p{font-size:20px}}

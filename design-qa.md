@@ -1,7 +1,7 @@
 # Design QA — Hero background
 
 - Source visual truth: user-provided watch hero screenshots in the conversation; primary desktop reference approximately 1536 × 787 px.
-- Implementation screenshots: `.taste-skill/hero-background-desktop.jpg`, `.taste-skill/hero-background-tablet.jpg`, and `.taste-skill/hero-background-mobile.jpg`.
+- Current implementation screenshot: `.taste-skill/hero-exact-aligned.jpg` (1440 × 900 CSS px, device scale factor 1). The previous generated-background captures below are historical and have been superseded.
 - Desktop capture: 1536 × 900 CSS px, device scale factor 1.
 - Tablet capture: 900 × 900 CSS px, device scale factor 1.
 - Mobile capture: 390 × 844 CSS px, device scale factor 1.
@@ -21,7 +21,7 @@ Focused region comparison was not required: the requested change is a single lar
 - Fonts and typography: existing ATELIER 12 serif display and sans-serif support type are unchanged; hierarchy and wrapping remain consistent with the approved site.
 - Spacing and layout rhythm: the white product channel is wide enough for the watch, the right black field begins after the dial, and no responsive viewport has horizontal overflow.
 - Colors and visual tokens: the generated background uses the established black-and-white palette; no new accent colors were introduced.
-- Image quality and asset fidelity: a dedicated 1832 × 858 px raster background is used instead of a CSS approximation. The existing transparent watch cutout remains sharp and visually separated from the background.
+- Image quality and asset fidelity: the rejected raster background has been replaced with two precise SVG background curves embedded in CSS. Their narrow white channel is centered on the watch at 71.5% of the hero width. The existing transparent watch image is fully visible at a smaller scale; its floating animation and shadow are disabled on desktop to preserve alignment.
 - Copy and content: all existing hero copy, navigation, CTA, and benefit text are unchanged.
 
 ## Interaction and responsive checks
@@ -39,7 +39,7 @@ No actionable P0, P1, or P2 mismatch remains for the requested background change
 
 - Initial generated asset: white center channel was too narrow and would have placed the watch over both black fields.
 - Fix: widened the channel to roughly one fifth of the hero and moved the right black field farther right.
-- Post-fix evidence: desktop and tablet captures show the complete watch framed by white space with black fields visible on both sides.
+- User correction: the generated background was rejected. Replaced the contours, reduced the product and text, and matched the white filled CTA to the supplied reference. Initial browser inspection identified a local SVG MIME issue, resolved by embedding the SVG in CSS; a second inspection corrected horizontal alignment of the curves. Final evidence: `.taste-skill/hero-exact-aligned.jpg` shows both black areas meeting the top and bottom of the strap, with white space opening above and below the watch. Browser console errors: none.
 
 ## Follow-up polish
 
