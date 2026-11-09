@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Heritage Noir — механические часы ATELIER 12 со стальным корпусом и запасом хода 72 часа.">
+  <title>Heritage Noir — ATELIER 12</title>
+  <link rel="preconnect" href="https://api.fontshare.com"><link rel="preconnect" href="https://cdn.fontshare.com" crossorigin><link href="https://api.fontshare.com/v2/css?f[]=panchang@700&f[]=switzer@400,500,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/responsive.css"><script src="js/main.js" defer></script>
+</head>
+<body id="page-top">
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+  <header class="site-header"><div class="site-header__inner"><a class="brand" href="index.html" aria-label="ATELIER 12, главная">ATELIER <span class="brand__mark">12</span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Меню</button><nav class="site-nav" id="site-nav" aria-label="Основная навигация"><ul class="site-nav__list"><li><a class="site-nav__link" href="index.html">Главная</a></li><li><a class="site-nav__link" href="catalog.html">Коллекция</a></li><li><a class="site-nav__link" href="product.html" aria-current="page">Модель</a></li><li><a class="site-nav__link" href="order.html">Заявка</a></li><li><a class="site-nav__link" href="contacts.html">Контакты</a></li></ul></nav></div></header>
+  <nav class="breadcrumbs" aria-label="Хлебные крошки"><ol><li><a href="index.html">Главная</a></li><li><a href="catalog.html">Коллекция</a></li><li aria-current="page">Heritage Noir</li></ol></nav>
+
+  <main id="main" class="page-shell">
+    <article class="product-detail page-intro">
+      <div data-reveal><img class="product-detail__image" src="images/heritage-noir-720.jpg" srcset="images/heritage-noir-360.jpg 360w, images/heritage-noir-720.jpg 720w" sizes="(max-width: 899px) calc(100vw - 32px), 52vw" alt="Механические часы Heritage Noir с чёрным циферблатом, открытым балансом и зелёным кожаным ремешком" width="720" height="720"></div>
+      <div class="product-detail__content" data-reveal>
+        <h1>Heritage Noir</h1>
+        <p>Сдержанная модель для ежедневного делового гардероба: сатинированная сталь, чёрный циферблат и открытый баланс на отметке «6 часов».</p>
+        <ul class="product-detail__features"><li>автоматический механизм;</li><li>запас хода до 72 часов;</li><li>сапфировое стекло;</li><li>водозащита 5 ATM.</li></ul>
+        <p class="product-detail__price">286 000 ₽</p>
+        <fieldset class="material-picker"><legend>Вариант ремешка</legend><div class="material-picker__options"><label><input type="radio" name="strap" value="green" checked> Зелёная кожа</label><label><input type="radio" name="strap" value="black"> Чёрная кожа</label><label><input type="radio" name="strap" value="steel"> Стальной браслет</label></div></fieldset>
+        <button class="button" type="button" data-open-dialog data-product="Heritage Noir">Запросить примерку</button>
+        <a class="button button--ghost" href="catalog.html">Назад к коллекции</a>
+      </div>
+    </article>
+
+    <section class="specification-section" aria-labelledby="spec-title">
+      <h2 class="section-heading" id="spec-title" data-reveal>Характеристики</h2>
+      <div class="table-wrapper" tabindex="0" role="region" aria-label="Прокручиваемая таблица характеристик Heritage Noir" data-reveal>
+        <table class="product-table">
+          <caption>Технические данные модели Heritage Noir</caption>
+          <thead><tr><th scope="col">Параметр</th><th scope="col">Значение</th><th scope="col">Комментарий</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Корпус</th><td>Нержавеющая сталь</td><td>Сатинированные поверхности</td></tr>
+            <tr><th scope="row">Диаметр</th><td>40 мм</td><td>Универсальная деловая посадка</td></tr>
+            <tr><th scope="row">Толщина</th><td>11,4 мм</td><td>Помещается под манжетой</td></tr>
+            <tr><th scope="row">Механизм</th><td>Автоматический</td><td>Открытый баланс</td></tr>
+            <tr><th scope="row">Запас хода</th><td>72 часа</td><td>Демонстрационное значение</td></tr>
+            <tr><th scope="row">Стекло</th><td>Сапфировое</td><td>Антибликовое покрытие</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+    <div class="order-dialog__inner">
+      <button class="order-dialog__close" type="button" data-dialog-close aria-label="Закрыть окно">×</button>
+      <h2 class="order-dialog__title" id="order-dialog-title">Запрос на примерку</h2>
+      <p>Оставьте контакты — консьерж согласует время визита.</p>
+      <form class="order-form" data-order-form novalidate>
+        <input type="hidden" name="product" value="Heritage Noir">
+        <div class="order-form__group order-form__group--wide"><label class="order-form__label" for="quick-name">Имя *</label><input class="order-form__input" id="quick-name" name="name" type="text" minlength="2" autocomplete="name" required aria-describedby="quick-name-error"><p class="form-error" id="quick-name-error" role="alert" hidden></p></div>
+        <div class="order-form__group order-form__group--wide"><label class="order-form__label" for="quick-phone">Телефон *</label><input class="order-form__input" id="quick-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="^\+?[0-9 ()-]{10,20}$" required aria-describedby="quick-phone-error"><p class="form-error" id="quick-phone-error" role="alert" hidden></p></div>
+        <div class="order-form__group order-form__group--wide order-form__checkbox"><input id="quick-agreement" name="agreement" type="checkbox" required aria-describedby="quick-agreement-error"><label for="quick-agreement">Согласен на обработку данных *</label><p class="form-error" id="quick-agreement-error" role="alert" hidden></p></div>
+        <div class="order-form__actions"><button class="button" type="submit" disabled>Отправить запрос</button></div>
+        <p class="form-status" data-form-status role="status" tabindex="-1" hidden></p>
+      </form>
+    </div>
+  </dialog>
+
+  <footer class="site-footer"><div class="site-footer__inner"><p class="site-footer__wordmark">ATELIER 12</p><div class="site-footer__columns"><p>Учебный интернет-магазин механических часов.</p><nav class="site-footer__links" aria-label="Навигация в подвале"><a href="catalog.html">Коллекция</a><a href="order.html">Заявка</a></nav><div class="site-footer__links"><a href="tel:+74950001212">+7 495 000-12-12</a><a href="mailto:concierge@atelier12.example">concierge@atelier12.example</a></div></div><p class="site-footer__legal">© 2026 ATELIER 12. Учебный проект, не является публичной офертой.</p></div></footer>
+  <a class="back-to-top" href="#page-top" aria-label="Вернуться к началу страницы" hidden>↑</a>
+</body>
+</html>
