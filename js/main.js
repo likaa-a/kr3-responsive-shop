@@ -338,7 +338,7 @@ document.querySelectorAll('form[data-order-form]').forEach((form) => {
     }
     if (status) {
       status.hidden = false;
-      status.textContent = 'Заявка принята. Консьерж свяжется с вами в течение рабочего часа.';
+      status.textContent = 'Заявка принята. Персональный менеджер свяжется с вами в течение рабочего часа.';
       status.focus();
     }
     form.reset();
